@@ -361,7 +361,7 @@ if ["$VM" = false];
     else
         printf "%s%sInstalling VM only tools.%s\n" "${CGR}" "$paquete" "${CNC}"
         sudo pacman -S open-vm-tools --noconfirm
-        echo "openvm-user-suid-wrapper &" >> "$HOME"/.config/bspwm/bspwmrc
+        echo "vmware-user-suid-wrapper &" >> "$HOME"/.config/bspwm/bspwmrc
 fi
 
 ########## ---------- Setup Greeter ---------- ##########
