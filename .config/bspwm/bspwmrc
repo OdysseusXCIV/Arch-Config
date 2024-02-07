@@ -113,4 +113,3 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
-openvm-user-suid-wrapper &
