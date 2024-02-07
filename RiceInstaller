@@ -52,20 +52,17 @@ logo "Installing needed packages.."
 
 #Select dependencies for either host or VM install
 read -r -p "Is this a VM install? [y/N] " response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-        then
-            dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
-			  alacritty brightnessctl dunst rofi lsd stalonetray \
-			  jq polkit-gnome git playerctl mpd xclip \
-			  ncmpcpp geany ranger mpc xdo xdotool jgmenu \
-			  feh ueberzug maim pamixer libwebp xdg-user-dirs \
-              lightdm-webkit2-greeter lightdm-webkit-theme-aether tmux \
-			  webp-pixbuf-loader xorg-xprop xorg-xkill physlock papirus-icon-theme \
-			  ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-inconsolata ttf-joypixels \
-			  zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting xorg-xsetroot xorg-xwininfo xorg-xrandr)
-            VM=true
-        else
-            dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        vm = true
+    else
+        vm = false
+fi
+
+sleep 3
+printf "the value of vm is: %s\n" $vm
+sleep 5
+
+dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
 			  alacritty brightnessctl dunst rofi lsd stalonetray \
 			  jq polkit-gnome git playerctl mpd xclip \
 			  ncmpcpp geany ranger mpc picom xdo xdotool jgmenu \
@@ -74,8 +71,6 @@ read -r -p "Is this a VM install? [y/N] " response
 			  webp-pixbuf-loader xorg-xprop xorg-xkill physlock papirus-icon-theme \
 			  ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-inconsolata ttf-joypixels \
 			  zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting xorg-xsetroot xorg-xwininfo xorg-xrandr)
-            VM=false
-fi
 
 is_installed() {
   pacman -Qi "$1" &> /dev/null
@@ -351,7 +346,10 @@ paru -S zsh-vi-mode --skipreview --noconfirm
 #clone tpm into tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+sleep 5
 echo $VM
+sleep 5
+
 if [["$VM" = false]]; 
     then
         printf "%s%sInstalling host specific tools.%s\n"
