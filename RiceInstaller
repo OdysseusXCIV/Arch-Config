@@ -110,7 +110,7 @@ clear
 
 logo "Downloading dotfiles"
 
-repo_url="https://github.com/OdysseusXCIV/Arch-install.git"
+repo_url="https://github.com/OdysseusXCIV/Arch-config.git"
 repo_dir="$HOME/dotfiles"
 
 # Ensure existing dotfiles directory does not exist
