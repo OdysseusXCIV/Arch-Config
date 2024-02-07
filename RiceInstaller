@@ -352,16 +352,19 @@ paru -S zsh-vi-mode --skipreview --noconfirm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo $VM
-if ["$VM" = false]; 
+if [["$VM" = false]]; 
     then
-        printf "%s%sInstalling host specific tools.%s\n" "${CGR}" "$paquete" "${CNC}"
+        printf "%s%sInstalling host specific tools.%s\n"
         paru -S optimus-manager --skireview --noconfirm
         sleep 5
         sudo cp "$HOME"/dotfiles/misc/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
-    else
-        printf "%s%sInstalling VM only tools.%s\n" "${CGR}" "$paquete" "${CNC}"
+    elif [["$VM" = true]];
+    then
+        printf "%s%sInstalling VM only tools.%s\n"
         sudo pacman -S open-vm-tools --noconfirm
         echo "vmware-user-suid-wrapper &" >> "$HOME"/.config/bspwm/bspwmrc
+    else
+        printf "%s%sVM variable not assigned.%s\n" 
 fi
 
 ########## ---------- Setup Greeter ---------- ##########
