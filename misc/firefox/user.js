@@ -13,14 +13,13 @@ user_pref("browser.sessionstore.interval", 15000000);
 user_pref("extensions.pocket.enabled", false);
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("accessibility.force_disabled", 1);
-user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.uitour.enabled", false);
 
 /*** STARTUP ***/
 
 /* set startup page
  * 0=blank, 1=home, 2=last visited page, 3=resume previous session*/
-user_pref("browser.startup.page", 0);
+user_pref("browser.startup.page", 3);
 /* set HOME+NEWWINDOW page
  * about:home=Firefox Home, custom URL, about:blank*/
 user_pref("browser.startup.homepage", "about:blank");
