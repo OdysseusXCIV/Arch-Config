@@ -1,0 +1,8 @@
+require("Odysseus.plugins-setup")
+require("Odysseus.core.options")
+require("Odysseus.core.keymaps")
+require("Odysseus.core.colorscheme")
+require("Odysseus.plugins.nvim-tree")
+require("Odysseus.plugins.lualine")
+require("Odysseus.plugins.colorizer")
+require("Odysseus.plugins.comment")

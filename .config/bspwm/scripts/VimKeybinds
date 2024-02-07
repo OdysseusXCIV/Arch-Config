@@ -1,0 +1,210 @@
+# VIM Hotkeys
+
+# Nvim Tree
+SPACE + e
+
+# Creat File Nvim Tree
+a
+
+# Move Cursor Left,Down,Up,Right
+h,j,k,l
+
+# Multiline Move Up,Down
+gj,gk
+
+# Move To Top,Middle,Bottom Of Screen
+H,M,L
+
+# Jump Forwards To Start,End Of Word 
+w/W,e/E
+
+# Jump Backwords To Start,End Of Word 
+b/B,ge/Ge
+
+# Move Cursor To Matching Character 
+%
+
+# Jump To Start/End Of The Line
+0,$
+
+# Go To The First Line Of The Document
+gg
+
+# Go To The Last Line Of The Document
+G
+
+# Go To Line 5
+5gg/5G
+
+# Move To Local/Global Definition
+gd/gD
+
+# Jump To Next/Previous Paragraph or function 
+,
+
+# Move Screen Down/Up One Line
+ctrl + e, ctrl + y
+
+# Move Screen Down/Up One page 
+ctrl + f, ctrl + b
+
+#|||----- Insert Mode -----|||#
+
+# Insert Before/After Cursor
+i,a
+
+# Insert At Beginning/End Of Line
+I,A
+
+# Append New Line Below/Above Current Line
+o,O
+
+# Append At The End Of The Word
+ea
+
+# Delete Character Before The Cursor
+ctrl +h
+
+# Delete Word Before The Cursor 
+ctrl + w
+
+# Indent/De-indent
+ctrl + t,ctrl + d
+
+# Temporarily Enter Normal Mode
+ctrl + ox
+
+# Exit Insert Mode
+ctrl + c
+
+#|||----- Editing -----|||#
+
+# Replace Single Character/More Than One Character
+r,R
+
+# Delete Character/Line And Substitute
+s,S
+
+# Undo/Undo Last Changed Line
+u,U
+
+# Repeat Last Command
+.
+
+# Yank To End Of Line
+y$ or y
+
+# Yank From Char To Next Word
+yw
+
+# Yank Word Under The Cursor
+yiw
+
+# Yank The Word Under The Cursor And The Space After/Before It
+yaw
+
+# Paste After/Before Cursor
+p,P
+
+
+# Paste After/Before Cursor And Leave Cursor After Pasted Text
+gp,gP
+
+# Delete Word After Cursor
+dw
+
+# Delete Range (.=Current Line)(,=Delimiter)($=End Of File)
+:.,$d
+
+# Delete All Lines Containing Pattern
+:g/{pattern}/d
+
+# Delete All Lines Not Containing Pattern
+:g!/{pattern}/d
+
+# Write Out The Current File Using Sudo
+:w !sudo tee %
+
+# Save and Quit All Tabs
+:wqa
+
+# Search For Pattern
+/pattern
+
+# Search Backwards For Pattern
+?pattern
+
+# Very Magic Patern: (Regex Support)
+\vpattern
+
+# Repeat Search In Same/Opposite Direction
+n,N
+
+# Replace All Old With New Throughout File
+:%s/old/new/g
+
+# Replace All Old With New Throughout File Without Confirm
+:%s/old/new/gc
+
+# Seach For Pattern In Multiple Files
+:vim[grep] /foo/ **/*
+
+# Jump To Next Match
+:cn
+
+# Jump To Previous Match
+:cp
+
+# Open Window Containing List Of Matches
+:cope
+
+# Close QuickFix Menu
+:ccl
+
+# Open A New Tab
+:tabnew or tabnew (page.words.file)
+
+# Move The Current Split Window Into Its Own Tab
+ctrl + wT
+
+# Navigate Tabs next,previous,tab number
+gt,gT,5gt
+
+# Close Current Tab
+:tabc
+
+# Run Command On all Tabs (ex: tabdo q - Closes All Tabs)
+:tabdo
+
+ # Split Window/Split Verticallu=y
+ctrl + ws, ctrl + wv
+
+ # Move Cursor To Window (left,right,down,above)
+ctrl + wh,wl,wj,wk
+
+# Open Terminal
+:ter
+
+# Close Terminal
+ctrl + n
+
+# Comment Line/Lines
+gcc/5gcc
+
+# Leader Open/Close/GoToNext/GoToPrevious Tabs
+SPACE + to,tx,tn,tp
+
+# Leader Spilt Vertically/Horizontally/Close Split
+SPACE + sv,sh,sx
+
+# Open File From Within New Tab
+:e ~/.vimrc
+
+# Surround Motion With Character Example Below: Surround word with "" 
+ys + w + "
+
+# Delete Surround
+ds + ""
+
+# Replace Surround
+cs + "" + '
