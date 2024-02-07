@@ -345,13 +345,17 @@ read -r -p "Do you want to install Pentesting Tools? [y/N] " response
     fi
 
 ########## --------- Install additional tools --------- #########
+#install zsh-vi-mode
+paru -S zsh-vi-mode --skipreview --noconfirm
 
-paru -S zsh-vi-mode
+#clone tpm into tmux plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+echo $VM
 if ["$VM" = false]; 
     then
         printf "%s%sInstalling host specific tools.%s\n" "${CGR}" "$paquete" "${CNC}"
-        paru optimus-manager --needed --noconfirm -S
+        paru -S optimus-manager --skireview --noconfirm
         sleep 5
         sudo cp "$HOME"/dotfiles/misc/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
     else
