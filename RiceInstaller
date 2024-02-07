@@ -48,19 +48,20 @@ clear
 
 ########## ---------- Install packages ---------- ##########
 
-logo "Installing needed packages.."
 
 #Select dependencies for either host or VM install
 read -r -p "Is this a VM install? [y/N] " response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        vm = true
+        vm=true
     else
-        vm = false
+        vm=false
 fi
 
 sleep 3
 printf "the value of vm is: %s\n" $vm
 sleep 5
+
+logo "Installing needed packages.."
 
 dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
 			  alacritty brightnessctl dunst rofi lsd stalonetray \
