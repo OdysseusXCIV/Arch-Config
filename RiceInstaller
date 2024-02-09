@@ -374,6 +374,12 @@ sudo chmod 700 /var/lib/AccountsService/users/odysseus
 
 sudo systemctl enable lightdm
 
+########## --------- Final Touches -------------- ##########
+
+logo "Finishing touches"
+
+sudo cp -fr "$HOME"/dotfiles/misc/99-reload-monitor.rules /etc/udev/rules.d/99-reload-monitor.rules
+
 ########## --------- Changing shell to zsh ---------- ##########
 
 logo "Changing default shell to zsh"
