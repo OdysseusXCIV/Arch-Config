@@ -57,10 +57,6 @@ read -r -p "Is this a VM install? [y/N] " response
         vm=false
 fi
 
-sleep 3
-printf "the value of vm is: %s\n" $vm
-sleep 5
-
 logo "Installing needed packages.."
 
 dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
@@ -68,7 +64,7 @@ dependencias=(base-devel rustup pacman-contrib bspwm polybar sxhkd \
 			  jq polkit-gnome git playerctl mpd xclip \
 			  ncmpcpp geany ranger mpc picom xdo xdotool jgmenu \
 			  feh ueberzug maim pamixer libwebp xdg-user-dirs \
-              autorandr tmux obsidian discord lightdm-webkit2-greeter lightdm-webkit-theme-aether \
+              autorandr tmux neovim obsidian discord lightdm-webkit2-greeter lightdm-webkit-theme-aether \
 			  webp-pixbuf-loader xorg-xprop xorg-xkill physlock papirus-icon-theme \
 			  ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-inconsolata ttf-joypixels \
 			  zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting xorg-xsetroot xorg-xwininfo xorg-xrandr)
@@ -351,7 +347,7 @@ if $vm;
     then
         printf "%s%sInstalling VM only tools.%s\n"
         sudo pacman -S open-vm-tools --noconfirm
-        cp "$HOME"/.config/bspwm/bspwmrc.old "$HOME"/.config/bspwm/bspwmrc
+        cp "$HOME"/dotfiles/.config/bspwm/bspwmrc.old "$HOME"/.config/bspwm/bspwmrc
     else
         printf "%s%sInstalling host specific tools.%s\n"
         paru -S optimus-manager --skireview --noconfirm
